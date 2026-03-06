@@ -1,0 +1,24 @@
+# Java / Maven
+backend/target/
+*.class
+*.jar
+*.war
+!**/src/test/**/*.jar
+
+# Node.js
+frontend/node_modules/
+frontend/dist/
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
+.env.*.local
