@@ -36,6 +36,10 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        // CSRF is disabled intentionally: this is a stateless REST API secured with
+        // JWT Bearer tokens sent in the Authorization header (not cookies). CSRF attacks
+        // are only relevant when credentials are automatically sent by the browser (e.g.
+        // session cookies), which is not the case here.
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
